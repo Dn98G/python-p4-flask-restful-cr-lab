@@ -11,3 +11,4 @@ class Plant(db.Model, SerializerMixin):
     name = db.Column(db.String, nullable=False)
     image = db.Column(db.String)
     price = db.Column(db.Numeric(10, 2))  # up to 99999999.99
+
