@@ -9,6 +9,8 @@ class Plant(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
-    image = db.Column(db.String)
-    price = db.Column(db.Numeric(10, 2))  # up to 99999999.99
+    image = db.Column(db.String, nullable=False)
+    price = db.Column(db.Numeric(5, 2), nullable=False)
 
+    # Configure serialization rules (optional, if using to_dict())
+    serialize_rules = ("-some_relationship",)
